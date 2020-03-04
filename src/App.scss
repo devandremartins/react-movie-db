@@ -1,0 +1,63 @@
+:root {
+  --white: #fff;
+  --light-gray: #f2f2f2;
+  --dark-gray: #333;
+  --font-primary: 'Source Sans Pro', sans-serif;
+  --font-display: 'Alegreya', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+/* RESET END */
+
+body {
+  background: #f4f6fa;
+  font-size: 1.6rem;
+  font-family: var(--font-primary);
+  color: var(--dark-gray);
+}
+
+main {
+  padding: 3rem;
+}
+
+.items-grid {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 4rem 3rem;
+}
