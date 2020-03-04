@@ -15,6 +15,7 @@ export const Main = props => {
             key={item.id}
             itemId={item.id}
             title={item.title}
+            voteAverage={item.vote_average}
             poster={`${IMG_BASE_URL}/${POSTER_SIZE}${item.poster_path}`}
           />
         ))}
