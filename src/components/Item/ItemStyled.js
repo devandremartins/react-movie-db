@@ -19,4 +19,11 @@ export const ItemStyled = styled.div`
       left: 4rem;
     }
   }
+  .movie-detail-wrapper {
+    max-width: 96rem;
+    margin: 6rem auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+  }
 `;
