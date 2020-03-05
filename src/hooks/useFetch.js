@@ -6,16 +6,15 @@ export const useFetch = pathName => {
   let endpoint = `${API_URL}${pathName}/popular?api_key=${API_KEY}`;
   const [items, setItems] = useState([]);
 
-  const getItems = async () => {
-    const response = await fetch(endpoint);
-    const data = await response.json();
-    console.log(data.results);
-    setItems(data.results);
-  };
-
   useEffect(() => {
+    const getItems = async () => {
+      const response = await fetch(endpoint);
+      const data = await response.json();
+      console.log(data.results);
+      setItems(data.results);
+    };
     getItems();
   }, [endpoint]);
 
-  return [items, setItems];
+  return [items];
 };

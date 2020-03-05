@@ -9,6 +9,7 @@ export const ItemThumbnailStyled = styled.article`
     margin-top: 0.5rem;
     font-weight: 600;
     font-size: 1.4rem;
+    color: #333;
   }
   .score {
     background: #fd807f;

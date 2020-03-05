@@ -5,7 +5,7 @@ import { useFetch } from '../../hooks/useFetch';
 
 export const Main = props => {
   let pathName = props.location.pathname;
-  const [items, setItems] = useFetch(pathName);
+  const [items] = useFetch(pathName);
 
   return (
     <main>

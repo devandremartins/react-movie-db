@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { API_URL, API_KEY, IMG_BASE_URL, BACKDROP_SIZE } from '../config';
+import { API_URL, API_KEY, IMG_BASE_URL, BACKDROP_SIZE } from '../../config';
 import { Cast } from './Cast';
+import { ItemStyled } from './ItemStyled';
 
 export const Item = props => {
   const itemId = props.match.params.itemId;
   let endpoint = `${API_URL}/movie/${itemId}?api_key=${API_KEY}`;
   const [movie, setMovie] = useState([]);
   const [movieCast, setMovieCast] = useState([]);
+  const heroBg = {
+    backgroundImage: `URL(${IMG_BASE_URL}/${BACKDROP_SIZE}${movie.backdrop_path})`
+  };
 
   const fetchItem = useCallback(async () => {
     const response = await fetch(endpoint);
@@ -30,18 +34,16 @@ export const Item = props => {
   }, [fetchItem, fetchItemCast]);
 
   return (
-    <div>
-      <img
-        src={`${IMG_BASE_URL}/${BACKDROP_SIZE}${movie.backdrop_path}`}
-        alt={movie.title}
-      />
-      <h1>{movie.title}</h1>
+    <ItemStyled>
+      <div className="movie-hero" style={heroBg}>
+        <h1>{movie.title}</h1>
+      </div>
       <p>{movie.overview}</p>
       <div className="cast-list">
-        {movieCast.map(item => (
+        {/*movieCast.map(item => (
           <Cast key={item.id} cast={item} />
-        ))}
+        ))*/}
       </div>
-    </div>
+    </ItemStyled>
   );
 };

@@ -7,7 +7,7 @@ export const Header = () => (
     <span className="logo">ReactMovieDB</span>{' '}
     <nav>
       <Link to="/">MOVIES</Link>
-      <Link to="/tv">SERIES</Link>
+      {/*<Link to="/tv">SERIES</Link>*/}
     </nav>
   </HeaderStyled>
 );
