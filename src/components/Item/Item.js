@@ -32,7 +32,6 @@ export const Item = props => {
       `${API_URL}/movie/${itemId}/credits?api_key=${API_KEY}`
     );
     const data = await response.json();
-    console.log(data);
     setMovieCast(data.cast);
   }, [itemId]);
 
@@ -65,9 +64,7 @@ export const Item = props => {
           <p>${movie.revenue}</p>
           <p>score -> {movie.vote_average}</p>
           <p>
-            {genres.map((item, index) => (
-              <span>{item.name} </span>
-            ))}
+            {genres && genres.map((item, index) => <span>{item.name} </span>)}
           </p>
           <div className="cast-list">
             {/*movieCast.map(item => (
