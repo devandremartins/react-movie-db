@@ -6,6 +6,8 @@ export const HeaderStyled = styled.header`
   padding: 3rem;
   background: #fff;
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   .logo {
     font-weight: 700;
     font-size: 1.8rem;
@@ -23,5 +25,17 @@ export const HeaderStyled = styled.header`
   }
   .header-user {
     text-align: right;
+  }
+  #SearchBox {
+    text-align: right;
+
+    .search-box {
+      border: 0;
+      border-bottom: 1px solid #fd807f;
+      font-size: 1.4rem;
+      padding: 0.5rem 1rem;
+      outline: none;
+      width: 18rem;
+    }
   }
 `;
