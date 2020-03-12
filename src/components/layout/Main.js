@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IMG_BASE_URL, POSTER_SIZE } from '../../config';
 import { ItemThumbnail } from '../ItemThumbnail/ItemThumbnail';
 import { useFetch } from '../../hooks/useFetch';
+import { MovieContext } from '../../contexts/MovieContext';
 
-export const Main = props => {
-  let pathName = props.location.pathname;
-  const [items] = useFetch(pathName);
-
+export const Main = () => {
+  const items = useContext(MovieContext);
   return (
     <main>
       <section className="items-grid">

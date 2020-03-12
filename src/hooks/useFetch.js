@@ -10,11 +10,10 @@ export const useFetch = pathName => {
     const getItems = async () => {
       const response = await fetch(endpoint);
       const data = await response.json();
-      console.log(data.results);
       setItems(data.results);
     };
     getItems();
   }, [endpoint]);
 
-  return [items];
+  return items;
 };
