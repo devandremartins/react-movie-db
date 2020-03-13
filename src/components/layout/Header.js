@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchBox } from './SearchBox';
 import { HeaderStyled } from './HeaderStyled';
-
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { MovieContext } from '../../contexts/MovieContext';
 
 export const Header = () => {
+  const { changeGenre } = useContext(MovieContext);
   const options = [
-    { value: 1, label: 'one' },
-    { value: 1, label: 'tro' }
+    { value: 28, label: 'Action' },
+    { value: 12, label: 'Adventure' }
   ];
-  const changeCategory = () => {};
+  const handleChangeGenre = e => {
+    changeGenre(e.value);
+  };
   return (
     <HeaderStyled>
       <div>
@@ -21,8 +24,8 @@ export const Header = () => {
         <nav>
           <Dropdown
             options={options}
-            onChange={changeCategory}
-            placeholder={'Select a Category'}
+            onChange={handleChangeGenre}
+            placeholder={'Select a Genre'}
           />
           {/*<Link to="/">MOVIES</Link>*/}
           {/*<Link to="/tv">SERIES</Link>*/}
