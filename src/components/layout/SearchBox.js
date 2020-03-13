@@ -4,8 +4,9 @@ import { MovieContext } from '../../contexts/MovieContext';
 
 export const SearchBox = () => {
   const { searchMovie } = useContext(MovieContext);
+
   const handleSearch = e => {
-    if (e.key === 'Enter' && e.target.value != '') {
+    if (e.key === 'Enter' && e.target.value !== '') {
       searchMovie(e.target.value);
     }
   };

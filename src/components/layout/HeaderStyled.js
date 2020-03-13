@@ -11,6 +11,9 @@ export const HeaderStyled = styled.header`
   .logo {
     font-weight: 700;
     font-size: 1.8rem;
+    a {
+      color: inherit;
+    }
   }
   nav {
     display: inline-block;
