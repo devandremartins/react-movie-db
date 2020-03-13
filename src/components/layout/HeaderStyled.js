@@ -7,7 +7,7 @@ export const HeaderStyled = styled.header`
   background: #fff;
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.08);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   .logo {
     font-weight: 700;
     font-size: 1.8rem;
@@ -15,23 +15,15 @@ export const HeaderStyled = styled.header`
       color: inherit;
     }
   }
-  nav {
-    display: inline-block;
-    margin-left: 3rem;
-    a {
-      color: #fd807f;
-      display: inline-block;
-      margin: 0 0.5rem;
-      font-weight: 400;
-      font-size: 1.5rem;
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .filter {
+      max-width: 22.5rem;
     }
-  }
-  .header-user {
-    text-align: right;
   }
   #SearchBox {
     text-align: right;
-
     .search-box {
       border: 0;
       border-bottom: 1px solid #fd807f;

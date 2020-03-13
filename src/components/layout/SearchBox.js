@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useFetch } from '../../hooks/useFetch';
 import { MovieContext } from '../../contexts/MovieContext';
 
 export const SearchBox = () => {

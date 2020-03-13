@@ -23,15 +23,21 @@ const MovieContextProvider = props => {
   };
 
   const changeGenre = genre => {
-    console.log('ID ->', genre);
-    //https:discover/movie?api_key=b8c00b34d7e9f2264d5bc2923d2d2ef1&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28
     setEndpoint(
       `${API_URL}/discover/movie?with_genres=${genre}&api_key=${API_KEY}`
     );
   };
 
+  const changeSort = sortOption => {
+    setEndpoint(
+      `${API_URL}/discover/movie?sort_by=${sortOption}&api_key=${API_KEY}`
+    );
+  };
+
   return (
-    <MovieContext.Provider value={{ items, searchMovie, changeGenre }}>
+    <MovieContext.Provider
+      value={{ items, searchMovie, changeGenre, changeSort }}
+    >
       {props.children}
     </MovieContext.Provider>
   );

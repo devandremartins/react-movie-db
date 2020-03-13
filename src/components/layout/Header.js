@@ -7,29 +7,40 @@ import 'react-dropdown/style.css';
 import { MovieContext } from '../../contexts/MovieContext';
 
 export const Header = () => {
-  const { changeGenre } = useContext(MovieContext);
-  const options = [
+  const { changeGenre, changeSort } = useContext(MovieContext);
+  const genres = [
     { value: 28, label: 'Action' },
     { value: 12, label: 'Adventure' }
+  ];
+  const sortOptions = [
+    { value: 'popularity.asc', label: 'Popularity' },
+    { value: 'vote_average.desc', label: 'Rating' },
+    { value: 'release_date.desc', label: 'Release Date' }
   ];
   const handleChangeGenre = e => {
     changeGenre(e.value);
   };
+  const handleChangeSort = e => {
+    changeSort(e.value);
+  };
   return (
     <HeaderStyled>
-      <div>
-        <span className="logo">
-          <Link to="/">ReactMovieDB</Link>
-        </span>
-        <nav>
-          <Dropdown
-            options={options}
-            onChange={handleChangeGenre}
-            placeholder={'Select a Genre'}
-          />
-          {/*<Link to="/">MOVIES</Link>*/}
-          {/*<Link to="/tv">SERIES</Link>*/}
-        </nav>
+      <div className="logo">
+        <Link to="/">ReactMovieDB</Link>
+      </div>
+      <div className="filters">
+        <Dropdown
+          className="filter"
+          options={genres}
+          onChange={handleChangeGenre}
+          placeholder={'Select a Genre'}
+        />
+        <Dropdown
+          className="filter"
+          options={sortOptions}
+          onChange={handleChangeSort}
+          placeholder={'Sort by'}
+        />
       </div>
       <div>
         <SearchBox />
