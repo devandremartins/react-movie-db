@@ -5,23 +5,26 @@ import { HeaderStyled } from './HeaderStyled';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { MovieContext } from '../../contexts/MovieContext';
+import { withRouter } from 'react-router-dom';
 
-export const Header = () => {
+const Header = props => {
   const { changeGenre, changeSort } = useContext(MovieContext);
   const genres = [
     { value: 28, label: 'Action' },
     { value: 12, label: 'Adventure' }
   ];
   const sortOptions = [
-    { value: 'popularity.asc', label: 'Popularity' },
+    { value: 'popularity.desc', label: 'Popularity' },
     { value: 'vote_average.desc', label: 'Rating' },
     { value: 'release_date.desc', label: 'Release Date' }
   ];
   const handleChangeGenre = e => {
     changeGenre(e.value);
+    props.history.push('/');
   };
   const handleChangeSort = e => {
     changeSort(e.value);
+    props.history.push('/');
   };
   return (
     <HeaderStyled>
@@ -48,3 +51,5 @@ export const Header = () => {
     </HeaderStyled>
   );
 };
+
+export default withRouter(Header);
