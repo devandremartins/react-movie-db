@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { IMG_BASE_URL, POSTER_SIZE } from '../../config';
 import { ItemThumbnail } from '../ItemThumbnail/ItemThumbnail';
-import { useFetch } from '../../hooks/useFetch';
 import { MovieContext } from '../../contexts/MovieContext';
 
 export const Main = () => {
-  const items = useContext(MovieContext);
+  const { items } = useContext(MovieContext);
   return (
     <main>
       <section className="items-grid">

@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { API_URL, API_KEY } from '../config';
 
+// Popular Movies - /movie/popular
+//Search - /search/movie
+
 export const useFetch = pathName => {
   if (pathName === '/') pathName = '/movie';
   let endpoint = `${API_URL}${pathName}/popular?api_key=${API_KEY}`;

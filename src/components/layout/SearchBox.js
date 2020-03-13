@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useFetch } from '../../hooks/useFetch';
+import { MovieContext } from '../../contexts/MovieContext';
 
 export const SearchBox = () => {
+  const { searchMovie } = useContext(MovieContext);
   const handleSearch = e => {
-    if (e.key === 'Enter') {
-      const term = e.target.value;
-      console.log('->', term);
+    if (e.key === 'Enter' && e.target.value != '') {
+      searchMovie(e.target.value);
     }
   };
 
