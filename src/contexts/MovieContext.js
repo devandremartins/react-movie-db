@@ -8,7 +8,6 @@ const MovieContextProvider = props => {
     `${API_URL}/movie/popular?api_key=${API_KEY}`
   );
   const [items, setItems] = useState([]);
-  const [totalPages, setTotalPages] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

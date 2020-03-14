@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const ItemThumbnailStyled = styled.article`
   position: relative;
-  img {
+  .poster {
     border: 1px solid #fff;
+    height: 100%;
   }
   h1 {
     margin-top: 0.5rem;

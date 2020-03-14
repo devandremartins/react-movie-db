@@ -9,9 +9,9 @@ export const Main = () => {
   return (
     <main>
       <section className="items-grid">
-        {items.map(item => (
+        {items.map((item, index) => (
           <ItemThumbnail
-            key={item.id}
+            key={index}
             itemId={item.id}
             title={item.title}
             voteAverage={item.vote_average}
