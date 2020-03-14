@@ -34,9 +34,13 @@ const MovieContextProvider = props => {
     );
   };
 
+  const loadMoreItems = () => {
+    console.log('load More');
+  };
+
   return (
     <MovieContext.Provider
-      value={{ items, searchMovie, changeGenre, changeSort }}
+      value={{ items, searchMovie, changeGenre, changeSort, loadMoreItems }}
     >
       {props.children}
     </MovieContext.Provider>

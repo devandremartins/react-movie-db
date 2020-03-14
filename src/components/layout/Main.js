@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { IMG_BASE_URL, POSTER_SIZE } from '../../config';
 import { ItemThumbnail } from '../ItemThumbnail/ItemThumbnail';
 import { MovieContext } from '../../contexts/MovieContext';
+import { LoadMore } from '../LoadMore/LoadMore';
 
 export const Main = () => {
-  const { items } = useContext(MovieContext);
+  const { items, loadMoreItems } = useContext(MovieContext);
   return (
     <main>
       <section className="items-grid">
@@ -18,6 +19,7 @@ export const Main = () => {
           />
         ))}
       </section>
+      <LoadMore onClick={loadMoreItems} text="Load More" />
     </main>
   );
 };
