@@ -8,34 +8,40 @@ const MovieContextProvider = props => {
     `${API_URL}/movie/popular?api_key=${API_KEY}`
   );
   const [items, setItems] = useState([]);
+  const [totalPages, setTotalPages] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const getItems = async () => {
       const response = await fetch(endpoint);
       const data = await response.json();
-      setItems(data.results);
+      setItems([...items, ...data.results]);
     };
     getItems();
   }, [endpoint]);
 
   const searchMovie = term => {
+    setItems([]);
     setEndpoint(`${API_URL}/search/movie?query=${term}&api_key=${API_KEY}`);
   };
 
   const changeGenre = genre => {
+    setItems([]);
     setEndpoint(
       `${API_URL}/discover/movie?with_genres=${genre}&api_key=${API_KEY}`
     );
   };
 
   const changeSort = sortOption => {
+    setItems([]);
     setEndpoint(
       `${API_URL}/discover/movie?sort_by=${sortOption}&api_key=${API_KEY}`
     );
   };
 
   const loadMoreItems = () => {
-    console.log('load More');
+    setCurrentPage(currentPage + 1);
+    setEndpoint(endpoint + '&page=' + currentPage);
   };
 
   return (
