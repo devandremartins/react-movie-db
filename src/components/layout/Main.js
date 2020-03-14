@@ -5,7 +5,7 @@ import { MovieContext } from '../../contexts/MovieContext';
 import { LoadMore } from '../LoadMore/LoadMore';
 
 export const Main = () => {
-  const { items, loadMoreItems } = useContext(MovieContext);
+  const { items } = useContext(MovieContext);
   return (
     <main>
       <section className="items-grid">
@@ -19,7 +19,7 @@ export const Main = () => {
           />
         ))}
       </section>
-      <LoadMore onClick={loadMoreItems} text="Load More" />
+      <LoadMore text="Load More" />
     </main>
   );
 };
