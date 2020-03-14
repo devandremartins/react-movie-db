@@ -4,9 +4,9 @@
 
 - create-react-app
 - hooks
-- custom hooks
-- styled-components
+- context api
 - react-router
+- styled-components
 - vscode
 - eslint
 - prettier
