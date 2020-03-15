@@ -10,3 +10,4 @@
 - vscode
 - eslint
 - prettier
+- netlify deploy from github
