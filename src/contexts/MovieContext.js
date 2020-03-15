@@ -19,6 +19,10 @@ const MovieContextProvider = props => {
     getItems();
   }, [endpoint]);
 
+  useEffect(() => {
+    setEndpoint(endpoint + '&page=' + currentPage);
+  }, [currentPage]);
+
   const searchMovie = term => {
     setItems([]);
     setEndpoint(`${API_URL}/search/movie?query=${term}&api_key=${API_KEY}`);
@@ -40,7 +44,6 @@ const MovieContextProvider = props => {
 
   const loadMoreItems = () => {
     setCurrentPage(currentPage + 1);
-    setEndpoint(endpoint + '&page=' + currentPage);
   };
 
   return (
