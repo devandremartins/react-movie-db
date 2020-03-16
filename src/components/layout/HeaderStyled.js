@@ -9,7 +9,8 @@ export const HeaderStyled = styled.header`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   @media (max-width: 736px) {
-    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
   }
 
   .logo {

@@ -6,13 +6,12 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { MovieContext } from '../../contexts/MovieContext';
 import { withRouter } from 'react-router-dom';
+import { genresData } from '../../contexts/genresData';
 
 const Header = props => {
   const { changeGenre, changeSort } = useContext(MovieContext);
-  const genres = [
-    { value: 28, label: 'Action' },
-    { value: 12, label: 'Adventure' }
-  ];
+  const genres = genresData;
+
   const sortOptions = [
     { value: 'popularity.desc', label: 'Popularity' },
     { value: 'vote_average.desc', label: 'Rating' },
