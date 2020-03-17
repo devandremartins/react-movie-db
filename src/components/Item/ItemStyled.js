@@ -26,4 +26,14 @@ export const ItemStyled = styled.div`
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
   }
+  .tagline {
+    font-size: 2.4rem;
+    font-style: italic;
+  }
+  p {
+    margin-bottom: 1.5rem;
+  }
+  a {
+    color: #fd807f;
+  }
 `;

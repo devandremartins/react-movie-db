@@ -50,21 +50,36 @@ export const Item = props => {
           <img
             src={`${IMG_BASE_URL}/${POSTER_SIZE}${movie.poster_path}`}
             alt={movie.title}
-          />{' '}
+          />
         </div>
         <div>
+          {movie.tagline && <p className="tagline">"{movie.tagline}"</p>}
           <p>{movie.overview}</p>
           <p>
+            <strong>Website</strong>
+            <br />
             <a href={movie.homepage} target="_blank" rel="noopener noreferrer">
               {movie.homepage}
             </a>
           </p>
-          <p>{movie.release_date}</p>
-          <p>{movie.runtime} minutes</p>
-          <p>${movie.revenue}</p>
+          <p>
+            <strong>Release Date</strong>
+            <br />
+            {movie.release_date}
+          </p>
+          <p>
+            <strong>Duration</strong>
+            <br />
+            {movie.runtime} minutes
+          </p>
           <p>score -> {movie.vote_average}</p>
           <p>
-            {genres && genres.map((item, index) => <span>{item.name} </span>)}
+            <strong>Genre</strong>
+            <br />
+            {genres &&
+              genres.map((item, index) => (
+                <span key={index}>{item.name} </span>
+              ))}
           </p>
           <div className="cast-list">
             {/*movieCast.map(item => (
