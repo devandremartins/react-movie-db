@@ -46,7 +46,7 @@ export const Item = props => {
         <h1>{movie.title}</h1>
       </div>
       <div className="movie-detail-wrapper">
-        <div>
+        <div className="movie-poster">
           <img
             src={`${IMG_BASE_URL}/${POSTER_SIZE}${movie.poster_path}`}
             alt={movie.title}

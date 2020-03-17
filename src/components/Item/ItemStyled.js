@@ -12,7 +12,7 @@ export const ItemStyled = styled.div`
       background-color: #fd807f;
       color: #fff;
       display: inline-block;
-      max-width: 50vw;
+
       padding: 0.5rem 1rem;
       position: absolute;
       bottom: 4rem;
@@ -25,6 +25,10 @@ export const ItemStyled = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
+    padding: 0 4.5rem;
+    @media (max-width: 736px) {
+      display: block;
+    }
   }
   .tagline {
     font-size: 2.4rem;
@@ -35,5 +39,10 @@ export const ItemStyled = styled.div`
   }
   a {
     color: #fd807f;
+  }
+  .movie-poster {
+    @media (max-width: 736px) {
+      display: none;
+    }
   }
 `;

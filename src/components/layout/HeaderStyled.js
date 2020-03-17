@@ -38,7 +38,7 @@ export const HeaderStyled = styled.header`
       border: 0;
       border-bottom: 1px solid #fd807f;
       font-size: 1.4rem;
-      padding: 0.5rem 1rem;
+      padding: 0.8rem 1rem;
       outline: none;
       width: 18rem;
     }

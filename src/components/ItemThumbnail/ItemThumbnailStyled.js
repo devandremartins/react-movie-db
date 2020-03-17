@@ -9,8 +9,13 @@ export const ItemThumbnailStyled = styled.article`
   h1 {
     margin-top: 0.5rem;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #333;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .score {
     background: #fd807f;
